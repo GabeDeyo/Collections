@@ -1,1 +1,111 @@
-﻿
+﻿/////
+Lists
+/////
+
+Index: The position in order
+	Starts at index 0
+
+List Types in .NET:
+	T[]
+	List<T>
+	Collection<T>
+	ReadOnlyCollection<T>
+	ObservableCollection<T>
+	IList<T> //Contract for index-based lists
+
+Good for memory use
+Efficient for accessing elements
+
+
+////////////
+Dictionaries
+////////////
+
+Access elements using a key
+Dictionary<TKey, TValue> //Most widely used dictionary type //Implemented using a hash table
+
+IDictionary<TKey, TValue> //Contract for dictionaries
+
+var employees = new Dictionary<string, Employee>(); //Declare a dictionary that allows looking up by name
+ex.
+var employees = new Dictionary<SocialSecNo, Employee>(); //For looking up an employee by social security no. declare:
+
+Looking up an element
+Dictionary(using key) = very fast
+List(using index) = extremely fast
+
+
+////
+Sets
+////
+
+Sets are collections that support being combined to form new sets
+
+HashSet<T> //Most common set class
+ISet<T> //Contract for sets
+
+Dictionaries & Sets are often based on hashtable,
+Dictionaries have lookup with keys
+Set have no lookup
+
+
+/////////////////////
+Collection Operations
+/////////////////////
+
+2 Types - Reading & Writing
+
+Reading
+	Look up an element(by index or key) - single element lookup
+	Enumerate the elements - multiple element lookup
+
+	List - Items enumerated in index order
+	Dictionary - Enumeration doesn't rely on order
+
+Writing
+	Add an element
+	Remove an element
+
+	Lists - Insert an element
+
+	(Replace an element)
+
+Derived Operations
+	Filter a list: Enumerate (LINQ is great for these derived operations)
+	But there's native support in T[] List<T>
+
+
+////////////////
+.NET Collections
+////////////////
+
+Arrays (2002)
+using System;
+
+New Generic Collections (2005)
+using System.Collections.Generic
+using System.Collections.ObjectModel;
+	HashSet<T>
+	Stack<T>
+	Queue<T>
+	LinkedList<T>
+	List<T>
+	Dictionary<TKey, TValue>
+
+LINQ (2007)
+	Adds opertations to anything enumerable - including collections
+
+Concurrent Collections (2010)
+using System.Collections.Concurrent
+	Supports Multi-Threaded Support
+
+Readonly Interfaces, Immutable Collections (2012)
+	IReadOnlyList<T> - Readonly contract
+	IReadOnlyCollection<T> - Readonly contract
+
+	Previously most collection interfaces had read-write contracts
+	IList<T>
+	ICollection<T>
+
+	Immutable Collections (Seperate NuGet package)
+	using System.Collections.Immutable

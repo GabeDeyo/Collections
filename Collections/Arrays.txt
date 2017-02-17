@@ -1,0 +1,32 @@
+﻿///////////////
+What are Arrays
+///////////////
+
+Index based list
+	Rich API +
+	Very lightweight +
+	Special C# syntax +
+	Fixed size -
+
+
+/*
+string monday = "Monday";
+string[] daysOfWeekd = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+*/
+
+Square brackets
+	type[] - declare array, not simple type
+
+Zero-based indexing
+	first index is 0 not 1
+	final index is (num of elements) - 1
+
+foreach(var x in array)
+	Enumerates elements
+	Returns elements in index order
+
+Square brackets
+	array[] = (expression) - replaces an element
+
+.NET bounds-checks array indeces
+	(But JIT-complier optimizes bounds-checks)
